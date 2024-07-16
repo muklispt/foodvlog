@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" >
+  <div class="row">
+
+{% for i in pr %}
+
+      <div class="col-md-6 col-lg-3">
+
+
+  <div class="card" style="width: 18rem;">
+ <a href="{{i.get_url}}"><img src="{{i.img.url}}" width="285" height="250" alt="{{i.name}}"></a>
+    <h5 class="card-title">{{i.name}} </h5>
+    <p class="card-text">{{i.dic|truncatewords:17}}</p>
+       <p class="card-price">{{i.price}} Rs</p>
+       <p class="card-stock">stock:{{i.stock}}</p>
+    <a href="{{i.get_url}}" class="btn btn-primary">Go Detail</a>
+  </div>
+
+ </div>
+{% endfor %}
+</div>
+
+    </div>
+
+
+</body>
+</html>

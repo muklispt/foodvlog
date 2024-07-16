@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+
+
+
+   <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{prodecte.img.url}}" class="img-fluid rounded-start" alt="{{prodecte.name}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{prodecte.name}}</h5>
+        <p class="card-text">{{prodecte.dic}}</p>
+        <p class="card-text"><small class="text-muted">price:$ Rs: {{prodecte.price}}</small></p>
+        <p class="card-stock">stock left : {{prodecte.stock}}</p>
+{% if prodecte.stock <= 0 %}        
+<h1 style="color:red;">Sorry.No Stock left  </h1>
+
+            {%else%}
+            <a href="{% url 'add' prodecte.id %}" class="tm-btn tm-btn-1 tm-link-to-services">Add</a>      
+{%endif%}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
